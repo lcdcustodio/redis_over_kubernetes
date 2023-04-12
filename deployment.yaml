@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: deploy-python
+    labels:
+      app: python-flask 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-flask
+  template:
+    metadata:
+      labels:
+        app: python-flask
+    spec:
+      containers:
+      - name: container-python
+        image: webapp2:latest
+        imagePullPolicy: Never #to run images on local disk
+        ports:
+        - containerPort: 8080
