@@ -10,7 +10,7 @@ def hello():
     ct = datetime.datetime.now()
     r = redis.StrictRedis(host='redis-headless', port=6379, db=0)
     # Set a key-value pair
-    r.set('my_key', 'my_key')
+    #r.set('my_key', 'my_key')
     r.set('my_key', str(ct))
 
     # Get the value for a key
